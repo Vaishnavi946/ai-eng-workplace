@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python
+venv/
+**/venv/
+__pycache__/
+*.pyc
+
+# Environment secrets
+.env
+**/.env
+
+# Build output
+dist/
+**/dist/
+
+# Logs
+*.log
+build-error.log
+
+# ChromaDB data
+ai-service-python/app/data/
+
+# OS files
+.DS_Store
+Thumbs.db
