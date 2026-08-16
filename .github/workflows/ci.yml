@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build frontend image
+        run: docker build -t ai-eng-workplace-frontend ./frontend
+
+      - name: Build backend-node image
+        run: docker build -t ai-eng-workplace-backend-node ./backend-node
+
+      - name: Build ai-service-python image
+        run: docker build -t ai-eng-workplace-ai-service-python ./ai-service-python
